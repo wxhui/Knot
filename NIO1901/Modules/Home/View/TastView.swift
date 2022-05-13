@@ -156,15 +156,15 @@ class TastView: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.reloadData()
     }
     
-    func updateTask(dic:[String:String]){
+    func updateTask(dic:[String:AnyObject]){
         if _task != nil {
             let count = _task!.interceptCount.intValue + 1
             _task?.interceptCount = NSNumber(integerLiteral: count)
-            if let uploadTrafficStr = dic["uploadTraffic"], let intValue = Int(uploadTrafficStr) {
+            if let uploadTrafficStr = dic["uploadTraffic"] as? String, let intValue = Int(uploadTrafficStr) {
                 let sum = _task!.uploadTraffic.intValue + intValue
                 _task?.uploadTraffic = NSNumber(integerLiteral: sum)
             }
-            if let downloadFlowStr = dic["downloadFlow"], let intValue = Int(downloadFlowStr) {
+            if let downloadFlowStr = dic["downloadFlow"] as? String, let intValue = Int(downloadFlowStr) {
                 let sum = _task!.downloadFlow.intValue + intValue
                 _task?.downloadFlow = NSNumber(integerLiteral: sum)
             }

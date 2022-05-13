@@ -433,10 +433,10 @@ class MainViewController: BaseViewController {
 extension MainViewController: GCDAsyncUdpSocketDelegate {
     func udpSocket(_ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any?) {
         let jsonStr = String(data: data, encoding: .utf8)
-        let dic = [String:String].fromJson(jsonStr ?? "")
+        let dic = [String:AnyObject].fromJson(jsonStr ?? "")
         if dic["url"] != nil || dic[""] != nil {
             taskView.updateTask(dic: dic)
-        }else if let state = dic["state"] {
+        }else if let state = dic["state"] as? String {
             if state == "close" {
 //                vpnIsOpen = false
 //                print("vpn closed !")

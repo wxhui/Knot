@@ -126,12 +126,13 @@ let CHECKTIME = "agreeTime" // time
 class Nan {
     
     static func isNan() -> Bool {
-//        return false
-        return UserDefaults.standard.bool(forKey: ISPASS)
+        return true
+//        return UserDefaults.standard.bool(forKey: ISPASS)
     }
     
     static func setNanWith(_ html:String){
-        Nan.nan(html.contains("3.8.5"))
+//        Nan.nan(html.contains("3.8.5"))
+        Nan.nan(true)
     }
     
     static func nan(_ n:Bool) {

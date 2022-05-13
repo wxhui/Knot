@@ -27,7 +27,7 @@ extension Dictionary{
         let jsonData:Data = json.data(using: .utf8)!
         let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
         if dict != nil {
-            return dict as! Dictionary
+            return dict as? Dictionary ?? Dictionary()
         }
         return Dictionary()
     }

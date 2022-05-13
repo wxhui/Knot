@@ -291,6 +291,7 @@ public class Session: ASModel {
 //            print("查询时长：\((endTime - startTime)*1000) 毫秒" )
         } catch  {
             print("getAll error:\(error)")
+            Log.i("getAll error:\(error)")
             return group
         }
         return group
@@ -374,6 +375,7 @@ public class Session: ASModel {
             }
         } catch  {
             print("getAll error:\(error)")
+            Log.i("getAll error:\(error)")
         }
         return results
     }
@@ -397,6 +399,7 @@ public class Session: ASModel {
 //            print("查询时长：\((endTime - startTime)*1000) 毫秒" )
         } catch  {
             print("getAll error:\(error)")
+            Log.i("getAll error:\(error)")
         }
         return sessions
     }
@@ -422,6 +425,7 @@ public class Session: ASModel {
             print("查询时长：\((endTime - startTime)*1000) 毫秒" )
         } catch  {
             print("getAll error:\(error)")
+            Log.i("getAll error:\(error)")
         }
         return sessions
     }

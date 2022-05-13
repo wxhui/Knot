@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Default Rule
         if UserDefaults.standard.string(forKey: "first") == nil {
 //            Bugly.setUserValue("true", forKey: "IsFirst")
+            try? Session().saveToDB()
             let defaultRule = Rule.defaultRule()
             try? defaultRule.saveToDB()
             UserDefaults.standard.set("\(defaultRule.id ?? -1)", forKey: CurrentRuleId)

@@ -152,6 +152,7 @@ public class Task: ASModel {
 //            print("查询时长：\((endTime - startTime)*1000) 毫秒" )
         } catch  {
             print("getAll error:\(error)")
+            Log.i("getAll error:\(error)")
         }
         return sessions
     }
@@ -169,6 +170,7 @@ public class Task: ASModel {
             }
         } catch  {
             print("getAll error:\(error)")
+            Log.i("getAll error:\(error)")
         }
         return results
     }
@@ -191,6 +193,7 @@ public class Task: ASModel {
 //            print("查询时长：\((endTime - startTime)*1000) 毫秒" )
         } catch  {
             print("getAll error:\(error)")
+            Log.i("getAll error:\(error)")
         }
         return tasks
     }

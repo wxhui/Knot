@@ -11,7 +11,7 @@ import NIO
 import NIOHTTP1
 import Reachability
 
-fileprivate let isDebug = false
+fileprivate let isDebug = true
 public let LocalHTTPServerChanged: NSNotification.Name = NSNotification.Name(rawValue: "LocalHTTPServerChanged")
 
 public class LocalHTTPServer {
