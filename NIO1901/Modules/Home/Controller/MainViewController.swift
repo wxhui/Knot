@@ -107,7 +107,7 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         
         // Nav
-        navBar.titleLable.text = "Knot"
+        navBar.titleLable.text = "小鹿看看"
         navBar.titleLable.textColor = ColorA
         navBar.titleLable.font = Font24
 //        rightBtn.setTitle("Settings".localized, for: .normal)

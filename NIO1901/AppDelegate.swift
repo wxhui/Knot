@@ -29,9 +29,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserDefaults.standard.string(forKey: "first") == nil {
 //            Bugly.setUserValue("true", forKey: "IsFirst")
             try? Session().saveToDB()
+            let ysRule = Rule.yuanshenRule()
+            
+            let item = RuleItem()
+            item.matchRule = .DOMAINSUFFIX
+            item.value = "mihoyo.com"
+            item.strategy = .DEFAULT
+            ysRule.add(.Rule, item);
+            try? ysRule.saveToDB()
+
+            
             let defaultRule = Rule.defaultRule()
             try? defaultRule.saveToDB()
-            UserDefaults.standard.set("\(defaultRule.id ?? -1)", forKey: CurrentRuleId)
+            
+            UserDefaults.standard.set("\(ysRule.id ?? -1)", forKey: CurrentRuleId)
             UserDefaults.standard.set("no first", forKey: "first")
             UserDefaults.standard.synchronize()
         }

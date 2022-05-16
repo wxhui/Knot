@@ -53,9 +53,9 @@ class SettingViewController: BaseViewController {
         let platform = AxEnvHelper.platform()
         let appVersion = AxEnvHelper.appVersion()
         
-        let subject = "Knot-\(appVersion)"
+        let subject = "小鹿看看-\(appVersion)"
         let describe = "Please describe the problems or advice.".localized
-        let info = "\n\n\n\n\n\n\n\n\n\nKnot\(appVersion) \(platform) \(systemVersion) \(currentNet)"
+        let info = "\n\n\n\n\n\n\n\n\n\n小鹿看看\(appVersion) \(platform) \(systemVersion) \(currentNet)"
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.delegate = self

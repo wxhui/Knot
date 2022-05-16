@@ -96,7 +96,7 @@ class SessionListViewController: BaseViewController {
     var outputType:OutputType = .URL
     
     static let searchBarHeight:CGFloat = 30
-    let littleSearchBar = CGRect(x: 44, y: STATUSBARHEIGHT + (44 - SessionListViewController.searchBarHeight) / 2, width: SCREENWIDTH - 64 - 44, height: SessionListViewController.searchBarHeight)
+    let littleSearchBar = CGRect(x: 44, y: STATUSBARHEIGHT + (44 - SessionListViewController.searchBarHeight) / 2 - 4, width: SCREENWIDTH - 64 - 44, height: SessionListViewController.searchBarHeight)
     let bigSearchBar = CGRect(x: LRSpacing, y: STATUSBARHEIGHT + (44 - SessionListViewController.searchBarHeight) / 2, width: SCREENWIDTH - 64 - LRSpacing, height: SessionListViewController.searchBarHeight)
     
     var sessions = [SessionItem]()
@@ -113,7 +113,9 @@ class SessionListViewController: BaseViewController {
     var task:Task?
     var searchWord:String?
     var focuses:[String:[String]]?
-    
+
+    private var _isFilterYuanshen: Bool = false
+
     private var _isSearching: Bool = false
     var isSearching: Bool {
         get { return _isSearching }
@@ -205,6 +207,24 @@ class SessionListViewController: BaseViewController {
         focusView.delegate = self
         return focusView
     }()
+    
+    lazy var yuanshenButton: UIButton = {
+        let btn = UIButton(frame: CGRect(x: filterHeadView.width - 180, y: 2, width: 170, height: filterHeadView.height-4))
+        btn.setTitle("元神抽卡分析，点我", for: .normal)
+        btn.setTitle("元神抽卡分析，点我", for: .selected)
+        btn.layer.borderWidth = 1
+        btn.layer.borderColor = UIColor.white.cgColor
+        btn.titleLabel?.font = Font16
+        btn.backgroundColor = UIColor.white
+        btn.layer.cornerRadius = 18
+        
+        btn.setTitleColor(UIColor.blue, for: .normal)
+        btn.setTitleColor(UIColor.red, for: .selected)
+        
+        btn.addTarget(self, action: #selector(yuanshenClick), for: .touchUpInside)
+        return btn
+    }()
+    
     var focusTitleLabel = UILabel()
     var focusSubTitleLabel = UILabel()
     var focusPreView = UIView()
@@ -330,6 +350,7 @@ class SessionListViewController: BaseViewController {
         // filterHeadView
         view.addSubview(filterHeadView)
         view.addSubview(focusView)
+        filterHeadView.addSubview(yuanshenButton)
         // list
         view.addSubview(tableView)
         // editTool
@@ -427,6 +448,24 @@ class SessionListViewController: BaseViewController {
     
     @objc func focusDidClick(){
         showFocusView = focusView.isHidden
+    }
+    
+    @objc func yuanshenClick(){
+        self.yuanshenButton.isSelected = !self.yuanshenButton.isSelected
+//        _isFilterYuanshen = !_isFilterYuanshen
+        
+        if self.yuanshenButton.isSelected {
+            searchExtensionView.searchOption.searchWord = "getGachaLog"
+            searchOption = searchExtensionView.searchOption.getACopy()
+        } else {
+            searchExtensionView.searchOption.searchWord = ""
+            searchOption = searchExtensionView.searchOption.getACopy()
+        }
+        
+        view.endEditing(true)
+
+        search()
+        isSearching = false
     }
     
     @objc func rightBtnDidClick(){

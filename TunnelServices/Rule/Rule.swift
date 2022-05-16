@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AxLogger
 
 public let CurrentRuleDidChange: NSNotification.Name = NSNotification.Name(rawValue: "CurrentRuleDidChange")
 
@@ -207,12 +208,25 @@ public class Rule: ASModel {
     
     public static func defaultRule() -> Rule {
         let rule = Rule()
-        rule.name = "Knot(Default)"
+        rule.name = "全部"
         rule.defaultStrategy = .DIRECT
         rule.defaultBlacklistEnable = true
-        rule.author = "Knot"
+        rule.author = "小鹿看看"
         rule.createTime = Date().fullSting
         _ = rule.config
+        return rule
+    }
+    
+    public static func yuanshenRule() -> Rule {
+        let rule = Rule()
+        rule.name = "原神"
+        rule.defaultStrategy = .COPY
+        rule.note = "元神抽卡抓包"
+        rule.defaultBlacklistEnable = true
+        rule.author = "xiaolukankan"
+        rule.createTime = Date().fullSting
+        _ = rule.config
+        
         return rule
     }
     
@@ -433,6 +447,7 @@ public class Rule: ASModel {
     }
     
     public static func findRules() -> [Rule] {
+        AxLogger.log("findAll:::::", level: .Info)
         return Rule.findAll()
     }
     
@@ -441,6 +456,7 @@ public class Rule: ASModel {
         if uri.hasPrefix("/") {
             fullUri = host + uri
         }
+        AxLogger.log("fullUri:::::", level: .Info)
         for item in defaulBlacklistRuleItems {
             switch item.matchRule {
             case .DOMAIN:
@@ -486,6 +502,12 @@ public class Rule: ASModel {
         if uri.hasPrefix("/") {
             fullUri = host + uri
         }
+        
+        if fullUri.contains("getGacha") {
+            print("\(fullUri)")
+        }
+        AxLogger.log("fullUri:::::", level: .Info)
+
         for item in _validRuleItems! {
             switch item.matchRule {
             case .DOMAIN:
@@ -501,6 +523,9 @@ public class Rule: ASModel {
 //                    print("命中DOMAINSUFFIX(\(item.value)):\n*************************\n\(host)\n\(target)\n\(uri)\n*************************")
                     return true }
             case .URLREGEX:
+                if fullUri.contains("getGacha") {
+                    print("\(fullUri)")
+                }
                 guard (try? NSRegularExpression(pattern: item.value, options: .caseInsensitive)) != nil else {
                     print("Invalid Regex")
                     return false
