@@ -13,7 +13,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.apps.test</string>
+		<string>group.com.apps.wxh.vpn</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>

@@ -84,7 +84,7 @@ class SFNETunnelProviderManager:NETunnelProviderManager {
             
             let config = NETunnelProviderProtocol()
             config.providerConfiguration = configInfo
-            config.providerBundleIdentifier = "com.apps.test.001.extension"
+            config.providerBundleIdentifier = "com.apps.wxh.vpn.ext"
             config.serverAddress = "Knot.Local"//"240.84.1.24"
             
             let manager = SFNETunnelProviderManager()

@@ -3620,7 +3620,7 @@
 				CODE_SIGN_ENTITLEMENTS = NIO1901/NIO1901.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3HN45NE646;
+				DEVELOPMENT_TEAM = SJH5Y2K86Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3632,9 +3632,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apps.test.001;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apps.wxh.vpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "test-dev-0012";
+				PROVISIONING_PROFILE_SPECIFIER = "dev-vpn";
 				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "NIO1901/NIO1901-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3653,7 +3653,7 @@
 				CODE_SIGN_ENTITLEMENTS = NIO1901/NIO1901.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3HN45NE646;
+				DEVELOPMENT_TEAM = SJH5Y2K86Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3665,9 +3665,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apps.test.001;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apps.wxh.vpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "test-dev-0012";
+				PROVISIONING_PROFILE_SPECIFIER = "dev-vpn";
 				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "NIO1901/NIO1901-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -3682,7 +3682,7 @@
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3HN45NE646;
+				DEVELOPMENT_TEAM = SJH5Y2K86Z;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TunnelServices/NIO/CNIOBoringSSL/CNIOBoringSSL/include\"";
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -3691,9 +3691,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apps.test.001.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apps.wxh.vpn.ext;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "test-dev-001-e";
+				PROVISIONING_PROFILE_SPECIFIER = "dev-vpn-ext";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
