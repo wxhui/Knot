@@ -211,7 +211,7 @@ public class Rule: ASModel {
         rule.name = "全部"
         rule.defaultStrategy = .DIRECT
         rule.defaultBlacklistEnable = true
-        rule.author = "小鹿看看"
+        rule.author = "Giraffe"
         rule.createTime = Date().fullSting
         _ = rule.config
         return rule
@@ -223,7 +223,7 @@ public class Rule: ASModel {
         rule.defaultStrategy = .COPY
         rule.note = "元神抽卡抓包"
         rule.defaultBlacklistEnable = true
-        rule.author = "xiaolukankan"
+        rule.author = "Giraffe"
         rule.createTime = Date().fullSting
         _ = rule.config
         

@@ -26,7 +26,7 @@ class AboutViewController: BaseViewController {
         
         let appVersion = AxEnvHelper.appVersion()
         let nameLabel = UILabel()
-        nameLabel.text = "小鹿看看 v\(appVersion)"
+        nameLabel.text = "Giraffe v\(appVersion)"
         nameLabel.textAlignment = .center
         nameLabel.font = Font18
         nameLabel.textColor = ColorD
